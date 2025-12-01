@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionario BMW / AUDI</title>
+
+    <!-- Bootstrap CSS (solo los estilos, no JS) -->
+    <!-- Bootstrap nos da clases para diseño responsivo, botones, márgenes, texto, etc. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light"> <!-- bg-light: fondo gris claro de Bootstrap -->
+
+    <!-- =========================
+         PANTALLA DE INICIO
+         Mostrar logos de las marcas
+    =========================== -->
+    <div id="homeInicio" class="text-center mt-5">
+        <h1 class="mb-4">Bienvenido al Concesionario</h1> <!-- mb-4: margin-bottom -->
+
+        <!-- Contenedor para logos con espacio entre ellos -->
+        <div class="d-flex justify-content-center gap-5">
+            <!-- Logo BMW -->
+            <div class="text-center">
+                <img id="logoBMW" src="img/bmw.png" class="logo-hover" alt="BMW">
+                <p class="mt-2 text-secondary">BMW</p> <!-- text-secondary: texto gris -->
+            </div>
+
+            <!-- Logo AUDI -->
+            <div class="text-center">
+                <img id="logoAUDI" src="img/audi.png" class="logo-hover" alt="AUDI">
+                <p class="mt-2 text-secondary">AUDI</p>
+            </div>
+        </div>
+
+        <p class="mt-4 text-secondary">Selecciona una marca</p>
+    </div>
+
+    <!-- =========================
+         SECCIÓN DE COCHES (pantalla 2)
+         Inicialmente oculta con d-none (Bootstrap)
+    =========================== -->
+    <div id="seccionCoches" class="container mt-4 d-none">
+        <h2 id="tituloMarca" class="mb-4"></h2> <!-- Título dinámico según marca -->
+        <div id="listaCoches" class="row gy-4"></div> <!-- gy-4: gap vertical de Bootstrap -->
+        <button id="volverInicio" class="btn btn-secondary mt-4">Volver al inicio</button>
+    </div>
+
+    <!-- =========================
+         FORMULARIO DE COMPRA (pantalla 3)
+         Inicialmente oculto con d-none
+    =========================== -->
+    <div id="formCompra" class="container mt-5 d-none">
+        <h2 class="mb-4">Formulario de Compra</h2>
+        <form id="formularioDatos" class="p-4 border rounded bg-white"> <!-- border, rounded, bg-white: Bootstrap -->
+
+            <!-- Campo Nombre -->
+            <div class="mb-3"> <!-- mb-3: margen inferior -->
+                <label class="form-label fw-bold">Nombre:</label> <!-- fw-bold: texto en negrita -->
+                <input type="text" id="nombre" class="form-control"> <!-- form-control: estilo Bootstrap para inputs -->
+                <p id="errorNombre" class="text-danger small"></p> <!-- Mensaje de error -->
+            </div>
+
+            <!-- Campo Apellidos -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Apellidos:</label>
+                <input type="text" id="apellidos" class="form-control">
+                <p id="errorApellidos" class="text-danger small"></p>
+            </div>
+
+            <!-- Campo Email -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Email:</label>
+                <input type="email" id="email" class="form-control">
+                <p id="errorEmail" class="text-danger small"></p>
+            </div>
+
+            <!-- Campo Teléfono -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">Teléfono:</label>
+                <input type="text" id="telefono" class="form-control">
+                <p id="errorTelefono" class="text-danger small"></p>
+            </div>
+
+            <!-- Campo DNI -->
+            <div class="mb-3">
+                <label class="form-label fw-bold">DNI:</label>
+                <input type="text" id="dni" class="form-control">
+                <p id="errorDNI" class="text-danger small"></p>
+            </div>
+
+            <!-- Botones de acción -->
+            <button type="button" id="guardarCompra" class="btn btn-primary mt-3">Guardar compra</button>
+            <button type="button" id="volverForm" class="btn btn-secondary mt-3">Volver atrás</button>
+        </form>
+    </div>
+
+    <!-- JS propio -->
+    <script src="script.js"></script>
+</body>
+</html>

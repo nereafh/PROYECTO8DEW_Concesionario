@@ -1,0 +1,41 @@
+/* ===============================
+   Estilos generales
+   =============================== */
+body {
+    padding-bottom: 40px; /* espacio inferior */
+}
+
+/* ===============================
+   Tarjetas de coches
+   .card es de Bootstrap, añadimos efecto hover
+   =============================== */
+.card {
+    border-radius: 15px; /* bordes redondeados */
+    transition: transform 0.2s; /* transición suave */
+}
+
+.card:hover {
+    transform: scale(1.03); /* aumenta tamaño al pasar el ratón */
+    cursor: pointer; /* cursor tipo mano */
+}
+
+/* ===============================
+   Inputs validados
+   =============================== */
+.correcto { border: 2px solid green !important; }
+.incorrecto { border: 2px solid red !important; }
+
+/* ===============================
+   Logos de marcas
+   =============================== */
+.logo-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* transición suave */
+    cursor: pointer; /* cursor mano */
+    height: 200px;
+    width: 200px;
+}
+
+.logo-hover:hover {
+    transform: scale(1.08); /* aumenta tamaño al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* sombra suave */
+}
