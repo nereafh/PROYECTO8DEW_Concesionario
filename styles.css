@@ -1,14 +1,12 @@
-/* ===============================
-   Estilos generales
-   =============================== */
 body {
     padding-bottom: 40px; /* espacio inferior */
 }
 
-/* ===============================
+/* 
    Tarjetas de coches
-   .card es de Bootstrap, añadimos efecto hover
-   =============================== */
+   .card es de Bootstrap, añado efecto hover
+
+ */
 .card {
     border-radius: 15px; /* bordes redondeados */
     transition: transform 0.2s; /* transición suave */
@@ -19,15 +17,13 @@ body {
     cursor: pointer; /* cursor tipo mano */
 }
 
-/* ===============================
-   Inputs validados
-   =============================== */
+
 .correcto { border: 2px solid green !important; }
 .incorrecto { border: 2px solid red !important; }
 
-/* ===============================
-   Logos de marcas
-   =============================== */
+/*
+   Logos de marcas, efecto hover
+ */
 .logo-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* transición suave */
     cursor: pointer; /* cursor mano */

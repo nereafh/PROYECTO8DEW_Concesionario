@@ -1,6 +1,7 @@
-// ===============================
-// OBJETOS DE CADA MARCA
-// ===============================
+
+//localStorage.clear();
+
+
 const MARCAS = {
     BMW: {
         nombre: "BMW",
@@ -30,22 +31,16 @@ const MARCAS = {
     }
 };
 
-// ===============================
-// VARIABLES GLOBALES
-// ===============================
+
 let marcaSeleccionada = null; // marca actual (BMW o AUDI)
 let cocheSeleccionado = null; // índice del coche seleccionado
 
-// ===============================
 // EVENTOS CLICK EN LOGOS
-// ===============================
 document.querySelector("#logoBMW").addEventListener("click", function(){ abrirMarca("BMW"); });
 document.querySelector("#logoAUDI").addEventListener("click", function(){ abrirMarca("AUDI"); });
 
-// ===============================
-// FUNCION ABRIR MARCA
+
 // Muestra los coches de la marca seleccionada
-// ===============================
 function abrirMarca(marca){
     marcaSeleccionada = marca;
 
@@ -62,20 +57,19 @@ function abrirMarca(marca){
     mostrarCoches();
 }
 
-// ===============================
+
 // FUNCION MOSTRAR COCHES
 // Crea las tarjetas de coches dinámicamente
-// ===============================
 function mostrarCoches(){
     let lista = document.querySelector("#listaCoches");
     lista.innerHTML = ""; // limpiar contenido previo
 
     MARCAS[marcaSeleccionada].coches.forEach(function(car, index){
         let col = document.createElement("div");
-        col.className = "col-md-3"; // Bootstrap: 4 columnas en desktop
+        col.className = "col-md-3"; 
 
         let card = document.createElement("div");
-        card.className = "card p-3 shadow-sm"; // card, padding, sombra Bootstrap
+        card.className = "card p-3 shadow-sm"; 
         card.innerHTML = "<h5 class='text-center'>" + car.modelo + "</h5>" +
                          "<p class='text-center fw-bold'>" + (car.vendido ? "VENDIDO" : "Disponible") + "</p>";
 
@@ -89,9 +83,7 @@ function mostrarCoches(){
     });
 }
 
-// ===============================
 // ABRIR FORMULARIO DE COMPRA
-// ===============================
 function abrirFormulario(indice){
     cocheSeleccionado = indice;
 
@@ -102,27 +94,21 @@ function abrirFormulario(indice){
     document.querySelector("#formCompra").classList.remove("d-none");
 }
 
-// ===============================
 // BOTÓN VOLVER FORMULARIO
-// ===============================
 document.querySelector("#volverForm").addEventListener("click", function(){
     document.querySelector("#formCompra").classList.add("d-none");
     document.querySelector("#seccionCoches").classList.remove("d-none");
 });
 
-// ===============================
 // BOTÓN VOLVER INICIO
-// ===============================
 document.querySelector("#volverInicio").addEventListener("click", function(){
     document.querySelector("#seccionCoches").classList.add("d-none");
     document.querySelector("#formCompra").classList.add("d-none");
     document.querySelector("#homeInicio").classList.remove("d-none");
 });
 
-// ===============================
 // FUNCION VALIDAR CAMPOS
 // Cambia color del input según si es correcto o incorrecto
-// ===============================
 function validarCampo(idInput, idError, regex){
     let input = document.querySelector(idInput);
     let texto = input.value.trim();
@@ -141,9 +127,7 @@ function validarCampo(idInput, idError, regex){
     return true;
 }
 
-// ===============================
 // GUARDAR COMPRA
-// ===============================
 document.querySelector("#guardarCompra").addEventListener("click", function(){
     let r = MARCAS.regex;
 
