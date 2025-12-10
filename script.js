@@ -1,6 +1,14 @@
 
 //localStorage.clear();
 
+/*
+function mostrarResultado(texto){
+    document.getElementById("resultado").innerHTML = texto;
+}
+
+mostrarResultado("Texto a mostrar");
+
+*/
 
 const MARCAS = {
     BMW: {
