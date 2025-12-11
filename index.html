@@ -17,6 +17,15 @@
          PANTALLA DE INICIO
          Mostrar logos de las marcas  -->
     <div id="homeInicio" class="text-center mt-5">
+
+        <div class="mb-3">
+            <button id="btnLogin" class="btn btn-primary me-2">Login</button>
+            <button id="btnRegistro" class="btn btn-success me-2">Registrarse</button>
+            <button id="btnCarrito" class="btn btn-warning">
+                Carrito (<span id="contadorCarrito">0</span>)
+            </button>
+        </div>
+
         <h1 class="mb-4">Bienvenido al Concesionario</h1> 
 
         <!-- Contenedor para logos con espacio entre ellos -->
@@ -42,6 +51,7 @@
          Inicialmente oculta con d-none (Bootstrap)
      -->
     <div id="seccionCoches" class="container mt-4 d-none">
+
         <h2 id="tituloMarca" class="mb-4"></h2> 
         <div id="listaCoches" class="row gy-4"></div> 
         <button id="volverInicio" class="btn btn-secondary mt-4">Volver al inicio</button>
@@ -98,6 +108,58 @@
         <!-- <div id="resultado" class="mt-3 p-2 border"></div> -->
 
     </div>
+
+        <!-- LOGIN -->
+    <div class="ventana d-none" id="ventanaLogin">
+    <div class="ventana-contenido card p-3" style="max-width:400px;">
+        <button class="btn-close float-end" id="closeVentanaLogin"></button>
+        <h4>Iniciar sesión</h4>
+        <form id="formLogin">
+        <input type="email" id="loginEmail" placeholder="Email" class="form-control mb-2" required>
+        <input type="password" id="loginPass" placeholder="Contraseña" class="form-control mb-2" required>
+        <div id="loginMsg" class="text-danger small mb-2"></div>
+        <button class="btn btn-primary w-100">Entrar</button>
+        </form>
+    </div>
+    </div>
+
+    <!-- REGISTRO -->
+    <div class="ventana d-none" id="ventanaRegistro">
+    <div class="ventana-contenido card p-3" style="max-width:450px;">
+        <button class="btn-close float-end" id="closeVentanaRegistro"></button>
+        <h4>Registro</h4>
+        <form id="formRegister">
+        <input id="regNombre" placeholder="Nombre" class="form-control mb-2">
+        <input id="regDNI" placeholder="DNI" class="form-control mb-2">
+        <input id="regEmail" placeholder="Email" class="form-control mb-2">
+        <input id="regTelefono" placeholder="Teléfono" class="form-control mb-2">
+        <input id="regPass" type="password" placeholder="Contraseña" class="form-control mb-2">
+        <div id="regMsg" class="text-danger small mb-2"></div>
+        <button class="btn btn-success w-100">Registrar</button>
+        </form>
+    </div>
+    </div>
+
+    <!-- CARRITO -->
+    <div class="ventana d-none" id="ventanaCarrito">
+    <div class="ventana-contenido card p-3" style="max-width:450px;">
+        <button class="btn-close float-end" id="closeVentanaCarrito"></button>
+        <h4>Carrito</h4>
+        <ul id="listaCarrito" class="list-group mb-3"></ul>
+        <button id="btnVaciarCarrito" class="btn btn-danger w-100">Vaciar carrito</button>
+    </div>
+    </div>
+
+    <!-- DETALLE COCHE -->
+    <div class="ventana d-none" id="ventanaCoche">
+    <div class="ventana-contenido card p-3">
+        <button class="btn-close float-end" id="closeVentanaCoche"></button>
+        <h4 id="tituloCoche"></h4>
+        <p id="precioCoche" class="fw-bold"></p>
+        <button class="btn btn-success" id="btnAgregarCarritoCoche">Añadir al carrito</button>
+    </div>
+    </div>
+
 
     <!-- JS propio -->
     <script src="script.js"></script>
